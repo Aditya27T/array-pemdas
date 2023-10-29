@@ -5,21 +5,29 @@
 using namespace std;
 
 int main() {
-    const int harga_normal = 80;
-    const int harga_per_20 = 60;
-    const int lembar = 20;
+    int harga[100], total[100], x;
 
-    for (int i = 1; i <= 100; i++) {
-        int harga_per_lembar = harga_normal;
-
-        if (i % lembar == 0) {
-            harga_per_lembar = harga_per_20;
+    // Tabel harga fotokopi
+    for (x = 1; x <= 100; x++) {
+        if (x % 20 == 0) {
+            harga[x] = 60;
+        } else {
+            harga[x] = 80;
         }
-
-        int harga_total = harga_per_lembar * i;
-
-        cout << "Jumlah lembar: " << i << ", Harga per lembar: " << harga_per_lembar << ", Harga total: " << harga_total << endl;
     }
+    
+    // Tampilkan tabel total
+    cout << endl;
+    cout << "Tabel Total Harga Fotokopi" << endl;
+    cout << "-------------------------" << endl;
+    cout << "Jumlah lembar\tTotal" << endl;
+    cout << "-------------------------" << endl;
+    for (x = 1; x <= 100; x++) {
+        total[x] = harga[x] * x;
+        cout << x << "\t\t" << total[x] << endl;
+    }
+
+    getch();
 
     return 0;
 }
