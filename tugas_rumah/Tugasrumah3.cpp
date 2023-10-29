@@ -1,21 +1,21 @@
 #include <iostream>
 using namespace std;
 
-bool isPrime(int n)
-{
-    if (n <= 1)
-    {
-        return false;
-    }
-    for (int i = 2; i <= n / 2; i++)
-    {
-        if (n % i == 0)
-        {
-            return false;
-        }
-    }
-    return true;
-}
+// bool isPrime(int n)
+// {
+//     if (n <= 1)
+//     {
+//         return false;
+//     }
+//     for (int i = 2; i <= n / 2; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
 int main()
 {
@@ -33,13 +33,13 @@ int main()
 
     cout << "Bilangan Fibonacci ke-" << n << " adalah " << fib[n - 1] << endl;
 
-    if (isPrime(fib[n - 1]))
+    if (fib[n - 1] % 2 == 0)
     {
-        cout << fib[n - 1] << " adalah bilangan prima" << endl;
+        cout << "Bilangan Fibonacci ke-" << n << " adalah bilangan genap" << endl;
     }
     else
     {
-        cout << fib[n - 1] << " bukan bilangan prima" << endl;
+        cout << "Bilangan Fibonacci ke-" << n << " adalah bilangan ganjil" << endl;
     }
 
     cout << "Deret bilangan fibonacci: ";
